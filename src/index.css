@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto-black";
+
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+}
+
+@font-face {
+  font-family: "Roboto-black";
+  src: url(./extras/Roboto-Regular.ttf);
+}
+
+
+
+.outerContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+
+
+}
+
+.group-container {
+  width: 30vw;
+  height: 100vh;
+  background: white;
+
+}
+
+.screen-container {
+  width: 70vw;
+  height: 100vh;
+  background-color: #DAE5F5;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 9em;
+}
+
+.screen-container img {
+  width: 30em;
+}
+
+.screen-text {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 1em;
+  font-weight: 700;
+}
+
+.screen-text h3 {
+
+
+  width: fit-content;
+  font-size: small;
+  font-weight: 500;
+
+}
+
+.endtoend {
+  margin-top: 12em;
+
+  display: flex;
+
+
+}
+
+.endtoend svg {
+  width: 0.8em;
+  height: 1em;
+}
+
+.endtoend h6 {
+  font-weight: 400;
+}
+
+.groupnames-list {
+  background: white;
+  width: 80%;
+  height: 80vh;
+  margin: 6vh;
+  overflow-y: auto;
+  /* Enables vertical scrolling if content overflows */
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+  padding: 1rem;
+  /* Optional: Adds inner spacing */
+  box-sizing: border-box;
+  /* Ensures padding is included in width/height */
+  scrollbar-width: thin;
+  /*for many browsers*/
+  scrollbar-color: #888 #f1f1f1;
+}
+
+
+
+/* Custom scrollbar styles */
+.groupnames-list::-webkit-scrollbar {
+  width: 4px;
+  /* Width of the scrollbar */
+}
+
+.groupnames-list::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 4px;
+  /* Rounded corners for the thumb */
+}
+
+.groupnames-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Darker color when hovered */
+}
+
+.groupnames-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Background color of the scrollbar track */
+  border-radius: 4px;
+  /* Rounded corners for the track */
+}
+
+.add-btn {
+  border: #DAE5F5;
+  border-radius: 50%;
+  width: 3.5vw;
+  height: 7vh;
+  background-color: #16008B;
+  color: white;
+  font-size: 5vh;
+  position: absolute;
+  left: 25vw;
+  bottom: 6vh;
+  z-index: 999;
+  position: fixed;
+}
+
+.dialog-outer {
+  border-radius: 6px;
+  width: 32%;
+  height: 32%;
+  background: white;
+  top: 30%;
+  left: 25%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: 1vw 2vw;
+  gap: 3vh;
+  inset: 1;
+
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(192, 182, 182, 0.5);
+  /* Semitransparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /*top in the layer*/
+
+}
+
+.dialog-outer h3 {
+  font-weight: 600;
+}
+
+.dialog-outer h2 {
+  font-weight: 700;
+}
+
+
+.group-name-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 1vw;
+
+}
+
+.group-name-container input {
+  padding: 1vw;
+  border: 1px solid gray;
+  border-radius: 20vw;
+  width: 18vw;
+  align-self: center;
+}
+
+.color-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.color-container button:hover,
+.color-container button:focus {
+  border: 3px solid blue;
+}
+
+.color-container button {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  border: 1vh;
+}
+
+
+.createbtn-div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.createbtn-div button {
+  background-color: #001f8b;
+  color: white;
+  padding: 0.2vw 2vw;
+  border-radius: 5px;
+}
+
+.grouplist-outer {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 6vh;
+}
+
+.grouplist-outer h1 {
+  margin-bottom: 2vh;
+}
+
+.groupnames-list {
+  padding: 0vw;
+  margin-top: 0vw;
+
+
+}
+
+.list-outer {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: fit-content;
+  gap: 1vw
+}
+
+.list-outer:hover,
+.list-outer:focus {
+  background-color: #2F2F2F2B;
+}
+
+
+
+.list-dp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  width: 3.5vw;
+  height: 3.5vw;
+  background-color: rgb(151, 133, 169);
+  border-radius: 50%;
+  padding: 0;
+  color: white;
+}
+
+.groupnames-list ul {
+  list-style-type: none;
+}
+
+.groupnames-list div {
+  font-size: 3.5vh;
+  margin-bottom: 1vh;
+}
+
+.notes-outer-Container {
+  position: relative;
+
+  z-index: 999;
+  width: 70vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+}
+
+.Navbar {
+  background-color: #001f8b;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  left: 0;
+  position: sticky;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+  gap: 1.5vw;
+  padding-bottom: 2vh;
+  padding-left: 1vw;
+}
+
+.Navbar .list-dp {
+  font-size: 1.5vw;
+}
+
+.Navbar h1 {
+  font-size: 3.5vh;
+  color: white;
+  margin-top: 2vh;
+
+}
+
+.notes-screen {
+  width: 100%;
+  height: 70%;
+  background-color: #DAE5F5;
+  border-bottom-left-radius: 1vw;
+  overflow-y: auto;
+  /* Enables vertical scrolling if content overflows */
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+  padding: 1rem;
+  /* Optional: Adds inner spacing */
+  box-sizing: border-box;
+  /* Ensures padding is included in width/height */
+  scrollbar-width: thin;
+  /*for many browsers*/
+  scrollbar-color: #f1f1f1 #888;
+
+}
+
+/* For WebKit browsers (like Chrome, Edge, and Safari) */
+.notes-screen::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
+}
+
+.notes-screen::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  height: 5px;
+  /* Height of the scrollbar tracker */
+}
+
+.notes-screen::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  /* Optional: Makes the scrollbar thumb rounded */
+}
+
+.notes-screen::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Changes color when hovered */
+}
+
+
+.each-notes {
+  width: 95%;
+  height: 30%;
+  background-color: white;
+  margin: 2vh 2vw 2vh;
+  padding: 1vw 1vw;
+  font-weight: 400;
+}
+
+.each-notes h6 {
+  position: relative;
+  left: 53vw;
+  top: 4vw;
+}
+
+
+.text-screen {
+
+  position: relative;
+  width: 100%;
+  height: 30%;
+  background-color: #001f8b;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-bottom-left-radius: 1vw;
+
+}
+
+.text-screen textarea {
+
+  width: 100%;
+  height: 100%;
+  border: 1.5vw solid #001f8b;
+  position: absolute;
+  /* Align explicitly within the container */
+  top: 0vh;
+  /* Start at the top */
+  bottom: 0;
+  /* Start at the left */
+  box-sizing: border-box;
+  padding: 1vw;
+  border-radius: 2vw;
+  resize: none;
+
+
+}
+
+.text-screen svg {
+  position: absolute;
+
+  z-index: 999;
+  margin: 0;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5vh;
+  margin-right: 2vw;
+}
