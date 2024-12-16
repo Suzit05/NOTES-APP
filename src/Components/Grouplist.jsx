@@ -12,6 +12,9 @@ const Grouplist = () => {
     const { addgroup, setaddgroup } = useContext(GrouplistContext)
     const { showNotes, setshowNotes } = useContext(NotesContext)
     const { selectedGroupName, setselectedGroupName } = useContext(NotesContext)
+    const { isback, setisback } = useContext(NotesContext)
+
+
 
 
     // Create an array of refs
@@ -24,6 +27,8 @@ const Grouplist = () => {
             console.log("Group name:", selectedGroupName);
         }
         setshowNotes(true);
+        setisback(false);
+
     };
 
 

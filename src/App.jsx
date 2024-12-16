@@ -3,15 +3,24 @@ import Grouplist from './Components/Grouplist'
 import { DialogContext, DialogProvider } from './Components/DialogContext'
 import Notes from './Components/Notes'
 import { NotesContext } from './Components/NotesContext'
+import { GrouplistContext } from './Components/GrouplistContext'
+
 
 
 const App = () => {
 
   const { showDialog, setshowDialog } = useContext(DialogContext)
   const { showNotes, setshowNotes } = useContext(NotesContext)
+  const { isback, setisback } = useContext(NotesContext)
+
   const handleAddBtn = () => {
     setshowDialog(true)
   }
+
+
+  //  button visibility for mobile
+  const isButtonVisible = !showNotes || isback;
+
 
   return (
     <>
@@ -35,7 +44,12 @@ const App = () => {
 
           </div>
         </div>}
-        <button onClick={handleAddBtn} class="add-btn">+</button>
+
+        {isButtonVisible && (
+          <button onClick={handleAddBtn} className="add-btn-mobile-on">
+            +
+          </button>
+        )}
 
       </div>
     </>

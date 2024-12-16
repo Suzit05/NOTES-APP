@@ -1,12 +1,15 @@
 import React, { useContext, useRef, useState } from 'react'
 import { GrouplistContext } from './GrouplistContext'
 import { NotesContext } from './NotesContext';
+import Grouplist from './Grouplist';
+
 
 const Notes = () => {
     const { addgroup, setaddgroup } = useContext(GrouplistContext);
     const { selectedGroupName, setselectedGroupName } = useContext(NotesContext)
     const [isTyping, setisTyping] = useState(false)
     const [notes, setnotes] = useState([])
+    const { isback, setisback } = useContext(NotesContext)
 
 
     const selectedGroup = addgroup.filter((group) => group.name === selectedGroupName);
@@ -49,9 +52,22 @@ const Notes = () => {
         }
     }
 
+    const backHandler = () => { //for mobile version
+        setisback(true); // Show the group list
+        setselectedGroupName(null); // Reset the selected group
+        console.log("back button pr click ho rha ")
+    };
+
+
+    if (isback) {
+        return (<div class="notes-outer-container" style={{ display: "none" }}></div>
+
+        )
+    }
+
+
 
     return (
-
         < div class="notes-outer-Container" >
 
             {selectedGroup.map((group, index) => {
@@ -62,6 +78,7 @@ const Notes = () => {
 
                 return (
                     <div key={index} class="Navbar">
+                        <svg onClick={backHandler} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg>
                         <div class="list-dp" style={{ backgroundColor: group.color }}>
                             {initials}
                         </div><h1>{group.name}</h1>
