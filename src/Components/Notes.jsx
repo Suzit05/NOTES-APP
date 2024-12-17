@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import { GrouplistContext } from './GrouplistContext'
 import { NotesContext } from './NotesContext';
 import Grouplist from './Grouplist';
@@ -16,7 +16,6 @@ const Notes = () => {
     console.log("selectedGroup:", selectedGroup)
     const selectedGroupIndex = addgroup.findIndex((group) => group.name === selectedGroupName);//finding selected group index here.
     console.log("index of selected group:", selectedGroupIndex)
-
 
 
     const handleTyping = () => {
@@ -111,7 +110,7 @@ const Notes = () => {
                     let formattedTime = `${hours}:${minutes} ${ampm}`;
 
                     return (
-                        <div key={index} class="each-notes">{note} <h6>{formattedDate} .{formattedTime}</h6> </div>
+                        <div key={index} class="each-notes">{note} <div class="date-div"><h6>{formattedDate} .{formattedTime}</h6> </div></div>
 
                     )
 

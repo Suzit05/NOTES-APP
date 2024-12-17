@@ -410,6 +410,9 @@ body {
 
 
 .each-notes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 95%;
   height: 30%;
   background-color: white;
@@ -418,11 +421,18 @@ body {
   font-weight: 400;
 }
 
-.each-notes h6 {
+.date-div {
+  display: flex;
+  justify-content: flex-end;
+  bottom: 0;
+}
+
+
+/* .each-notes h6 {
   position: relative;
   left: 53vw;
   top: 4vw;
-}
+} */
 
 
 .text-screen {
@@ -859,11 +869,17 @@ body {
     font-size: 1.8vh;
   }
 
-  .each-notes h6 {
+  .date-div {
+    display: flex;
+    justify-content: flex-end;
+    bottom: 0;
+  }
+
+  /* .each-notes h6 {
     position: relative;
     left: 48vw;
     top: 6.5vw;
-  }
+  } */
 
 
   .text-screen svg {
@@ -881,6 +897,7 @@ body {
 
 }
 
+/*for phone*/
 @media (max-width: 426px) {
   .outerContainer {
     padding: 0;
@@ -1079,7 +1096,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 9vh;
-    padding-top: 1vh;
+    padding-top: 0;
     gap: 3vw;
     font-weight: 550;
   }
@@ -1094,12 +1111,17 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 3vh;
-    width: 9.5vw;
-    height: 7.5vw;
+    width: 10vw;
+    height: 9.5vw;
     border-radius: 50%;
     color: white;
-
   }
+
+  .list-dp h5 {
+    font-weight: 400;
+  }
+
+
 
   .groupnames-list ul {
     list-style-type: none;
@@ -1190,11 +1212,22 @@ body {
     font-weight: 400;
   }
 
-  .each-notes h6 {
-    position: relative;
-    left: 60vw;
-    top: 23vw;
+
+  .date-div {
+
+    display: flex;
+    justify-content: flex-end;
+    bottom: 0;
+
+
   }
+
+  /* .each-notes h6 {
+    position: relative;
+    right: 57vw;
+    top: 23vw;
+
+  } */
 
 
   .text-screen {

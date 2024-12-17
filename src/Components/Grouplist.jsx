@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import Dialogcard from './Dialogcard'
 import { useState } from 'react'
 import { DialogContext, DialogProvider } from './DialogContext'
@@ -32,10 +32,6 @@ const Grouplist = () => {
     };
 
 
-
-
-
-
     return (
         <div class='grouplist-outer' >
             <h1>Pocket Notes</h1>
@@ -50,7 +46,7 @@ const Grouplist = () => {
                             onClick={() => handleEachGroup(index)}
                             class="list-outer" key={index}>
                             <div class="list-dp" style={{ backgroundColor: group.color }}>
-                                {initials}
+                                <h5>{initials}</h5>
                             </div>
                             {group.name}</div>)
                 })}</ul>
